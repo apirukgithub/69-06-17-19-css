@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Rich Bootstrap Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+      :root {
+        --ink: #151515;
+        --muted: #6f6f6f;
+        --line: #eadcff;
+        --paper: #fff7fb;
+        --accent: #ff3d8b;
+        --accent-2: #7c3aed;
+        --accent-3: #00b8d9;
+        --sun: #ffb000;
+      }
+
+      body {
+        font-family: "Noto Sans Thai", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+      }
+
+      [data-bs-theme="dark"] body {
+        color: #f8fafc;
+        background: #111827;
+      }
+
+      [data-bs-theme="dark"] .navbar,
+      [data-bs-theme="dark"] .section-white,
+      [data-bs-theme="dark"] .photo-card,
+      [data-bs-theme="dark"] .client-logo,
+      [data-bs-theme="dark"] form {
+        background: #182235 !important;
+        border-color: rgba(255,255,255,.12) !important;
+      }
+
+      [data-bs-theme="dark"] .section-pop {
+        background: linear-gradient(135deg, #211129, #12253a 55%, #302410);
+      }
+
+      [data-bs-theme="dark"] .text-secondary {
+        color: #b6c2d2 !important;
+      }
+
+      [data-bs-theme="dark"] .list-group-item {
+        background: #182235;
+        color: #f8fafc;
+        border-color: rgba(255,255,255,.12);
+      }
+
+      .hero {
+        min-height: 82vh;
+        background:
+          linear-gradient(90deg, rgba(92, 0, 120, .88), rgba(255, 61, 139, .58), rgba(0, 184, 217, .2)),
+          url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1900&q=88") center / cover;
+      }
+
+      .brand-dot {
+        width: 34px;
+        height: 34px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      }
+
+      .photo-card {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: #fff;
+        box-shadow: 0 18px 44px rgba(124, 58, 237, .14);
+      }
+
+      .photo-card img,
+      .gallery-tile img {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .photo-card img {
+        height: 280px;
+      }
+
+      .gallery-tile {
+        position: relative;
+        overflow: hidden;
+        min-height: 260px;
+      }
+
+      .gallery-tile img {
+        height: 100%;
+        min-height: 260px;
+      }
+
+      .gallery-caption {
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        color: #fff;
+        text-shadow: 0 2px 16px rgba(0,0,0,.55);
+      }
+
+      .section-white {
+        background:
+          radial-gradient(circle at top left, rgba(255, 61, 139, .16), transparent 26rem),
+          radial-gradient(circle at bottom right, rgba(0, 184, 217, .14), transparent 24rem),
+          #fff;
+      }
+
+      .btn-accent {
+        --bs-btn-bg: var(--accent);
+        --bs-btn-border-color: var(--accent);
+        --bs-btn-hover-bg: #d91f70;
+        --bs-btn-hover-border-color: #d91f70;
+        --bs-btn-color: #fff;
+      }
+
+      .section-pop {
+        background: linear-gradient(135deg, #fff0f7, #eef8ff 55%, #fff8df);
+      }
+
+      .badge-pop {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #fff;
+      }
+
+      .gallery-tile::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,.62));
+      }
+
+      .gallery-caption {
+        z-index: 1;
+      }
+
+      .client-logo {
+        min-height: 92px;
+        border: 1px solid var(--line);
+        background: #fff;
+        box-shadow: 0 14px 34px rgba(124, 58, 237, .1);
+      }
+
+      .client-logo img {
+        width: 52px;
+        height: 52px;
+        object-fit: cover;
+      }
+
+      .client-logo span {
+        font-size: .78rem;
+        font-weight: 700;
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 3.25rem;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: 1rem;
+        top: .25rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 .45rem rgba(255, 61, 139, .18);
+      }
+
+      .timeline-item::after {
+        content: "";
+        position: absolute;
+        left: 1.45rem;
+        top: 1.75rem;
+        bottom: -1.25rem;
+        width: 2px;
+        background: linear-gradient(180deg, rgba(255, 61, 139, .35), rgba(124, 58, 237, .08));
+      }
+
+      .timeline-item:last-child::after {
+        display: none;
+      }
+
+      .photo-card img.testimonial-avatar {
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+        flex: 0 0 56px;
+      }
+
+      .testimonial-card {
+        font-size: .875rem;
+        box-shadow: 0 10px 24px rgba(124, 58, 237, .1);
+      }
+
+      .testimonial-card .h6 {
+        font-size: .9rem;
+      }
+
+      .testimonial-card p {
+        line-height: 1.55;
+      }
+
+      .dropdown-submenu {
+        position: relative;
+      }
+
+      .mega-menu {
+        min-width: min(920px, calc(100vw - 2rem));
+        border: 1px solid var(--line);
+        box-shadow: 0 22px 60px rgba(124, 58, 237, .18);
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-left: .125rem;
+      }
+
+      .dropdown-submenu:hover > .dropdown-menu,
+      .dropdown-submenu:focus-within > .dropdown-menu {
+        display: block;
+      }
+
+      @media (max-width: 991.98px) {
+        .dropdown-submenu > .dropdown-menu {
+          position: static;
+          margin-left: 1rem;
+          border-left: 2px solid var(--line);
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+      <div class="container py-2">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
+          <span class="brand-dot rounded-circle d-inline-flex align-items-center justify-content-center text-white">I</span>
+          Image Studio
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-grid me-1" aria-hidden="true"></i>Work
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#stories"><i class="bi bi-stars me-2" aria-hidden="true"></i>Stories</a></li>
+                <li><a class="dropdown-item" href="#slideshow"><i class="bi bi-play-btn me-2" aria-hidden="true"></i>Slides</a></li>
+                <li><a class="dropdown-item" href="#gallery"><i class="bi bi-images me-2" aria-hidden="true"></i>Gallery</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item d-flex justify-content-between align-items-center" href="#gallery">
+                    <span><i class="bi bi-layers me-2" aria-hidden="true"></i>Collections</span>
+                    <i class="bi bi-chevron-right small" aria-hidden="true"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#gallery">Wide feature</a></li>
+                    <li><a class="dropdown-item" href="#gallery">Workspace</a></li>
+                    <li><a class="dropdown-item" href="#gallery">Landscape</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown position-static">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-columns-gap me-1" aria-hidden="true"></i>Mega
+              </a>
+              <div class="dropdown-menu mega-menu p-4 mt-0 start-50 translate-middle-x">
+                <div class="row g-4">
+                  <div class="col-lg-4">
+                    <p class="text-uppercase text-secondary small fw-bold mb-2">Featured</p>
+                    <a class="text-decoration-none text-body" href="#slideshow">
+                      <div class="gallery-tile rounded-4" style="min-height: 190px;">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=85" alt="Featured mega menu">
+                        <div class="gallery-caption">
+                          <span class="badge badge-pop mb-2">New</span>
+                          <h3 class="h6 mb-0">Image slider</h3>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-sm-6 col-lg-4">
+                    <p class="text-uppercase text-secondary small fw-bold mb-2">Explore</p>
+                    <div class="list-group list-group-flush">
+                      <a class="list-group-item list-group-item-action px-0" href="#stories"><i class="bi bi-stars me-2" aria-hidden="true"></i>Featured stories</a>
+                      <a class="list-group-item list-group-item-action px-0" href="#gallery"><i class="bi bi-images me-2" aria-hidden="true"></i>Gallery grid</a>
+                      <a class="list-group-item list-group-item-action px-0" href="#journal"><i class="bi bi-journal-richtext me-2" aria-hidden="true"></i>Editorial journal</a>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-4">
+                    <p class="text-uppercase text-secondary small fw-bold mb-2">Business</p>
+                    <div class="list-group list-group-flush">
+                      <a class="list-group-item list-group-item-action px-0" href="#clients"><i class="bi bi-building-check me-2" aria-hidden="true"></i>Clients</a>
+                      <a class="list-group-item list-group-item-action px-0" href="#timeline"><i class="bi bi-clock-history me-2" aria-hidden="true"></i>Timeline</a>
+                      <a class="list-group-item list-group-item-action px-0" href="#testimonials"><i class="bi bi-chat-quote me-2" aria-hidden="true"></i>Testimonials</a>
+                    </div>
+                    <a class="btn btn-accent w-100 mt-3" href="#contact"><i class="bi bi-send me-1" aria-hidden="true"></i>Start project</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-building-check me-1" aria-hidden="true"></i>Company
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#clients"><i class="bi bi-building-check me-2" aria-hidden="true"></i>Clients</a></li>
+                <li><a class="dropdown-item" href="#timeline"><i class="bi bi-clock-history me-2" aria-hidden="true"></i>Timeline</a></li>
+                <li><a class="dropdown-item" href="#testimonials"><i class="bi bi-chat-quote me-2" aria-hidden="true"></i>Testimonials</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item d-flex justify-content-between align-items-center" href="#timeline">
+                    <span><i class="bi bi-diagram-3 me-2" aria-hidden="true"></i>Process</span>
+                    <i class="bi bi-chevron-right small" aria-hidden="true"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#timeline">Discovery</a></li>
+                    <li><a class="dropdown-item" href="#timeline">Visual system</a></li>
+                    <li><a class="dropdown-item" href="#timeline">Launch</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#journal"><i class="bi bi-journal-richtext me-1" aria-hidden="true"></i>Journal</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-send me-1" aria-hidden="true"></i>Contact</a></li>
+          </ul>
+          <button id="themeToggle" class="btn btn-outline-secondary ms-lg-3" type="button"><i class="bi bi-moon-stars me-1" aria-hidden="true"></i><span>Dark mode</span></button>
+          <a class="btn btn-accent ms-lg-3" href="#gallery"><i class="bi bi-images me-1" aria-hidden="true"></i>View gallery</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero d-flex align-items-center text-white">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-lg-7">
+            <span class="badge badge-pop mb-3">Image-heavy Showcase</span>
+            <h1 class="display-3 fw-bold mb-4">เล่าเรื่องด้วยภาพใหญ่และ layout ที่ชวนสำรวจ</h1>
+            <p class="lead text-white-50 mb-4">ตัวอย่าง Bootstrap สำหรับเว็บไซต์ที่ภาพเป็นพระเอก เหมาะกับ portfolio, travel, hospitality, campaign หรือ brand story</p>
+            <div class="d-flex gap-2 flex-wrap">
+              <a class="btn btn-accent btn-lg" href="#stories"><i class="bi bi-compass me-2" aria-hidden="true"></i>Explore stories</a>
+              <a class="btn btn-outline-light btn-lg" href="index.html"><i class="bi bi-arrow-left me-2" aria-hidden="true"></i>Back to examples</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="stories" class="section-pop py-5">
+        <div class="container">
+          <div class="row align-items-end mb-4">
+            <div class="col-lg-7">
+              <p class="text-uppercase text-secondary small fw-bold mb-2">Featured Stories</p>
+              <h2 class="display-6 fw-bold">ภาพนำช่วยให้ section อ่านเร็วและจำง่าย</h2>
+            </div>
+            <div class="col-lg-5">
+              <p class="text-secondary mb-0">ใช้ card, grid, badges และ image utilities เพื่อสร้างหน้าเว็บที่เน้น visual แต่ยังคุม responsive ได้ง่าย</p>
+            </div>
+          </div>
+
+          <div class="row row-cols-1 row-cols-lg-3 g-4">
+            <div class="col">
+              <article class="photo-card rounded-4 h-100">
+                <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1000&q=85" alt="Modern home">
+                <div class="p-4">
+                  <span class="badge badge-pop mb-2">Architecture</span>
+                  <h3 class="h4">Modern living spaces</h3>
+                  <p class="text-secondary mb-0">Card แบบภาพนำ เหมาะกับบทความหรือบริการที่ต้องขายบรรยากาศ</p>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="photo-card rounded-4 h-100">
+                <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85" alt="Mountain road">
+                <div class="p-4">
+                  <span class="badge text-bg-info mb-2">Travel</span>
+                  <h3 class="h4">Route and destination</h3>
+                  <p class="text-secondary mb-0">ใช้สอน image sizing, card height, badge และ text hierarchy</p>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="photo-card rounded-4 h-100">
+                <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1000&q=85" alt="Design detail">
+                <div class="p-4">
+                  <span class="badge text-bg-warning mb-2">Design</span>
+                  <h3 class="h4">Visual identity details</h3>
+                  <p class="text-secondary mb-0">ภาพช่วยกำหนด tone ของเว็บโดยไม่ต้องใช้ decoration เยอะ</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="slideshow" class="section-white py-5 border-top border-bottom">
+        <div class="container">
+          <div class="row align-items-end mb-4">
+            <div class="col-lg-7">
+              <p class="text-uppercase text-secondary small fw-bold mb-2">Image Slider</p>
+              <h2 class="display-6 fw-bold">สไลด์ภาพใหญ่สำหรับเล่าแคมเปญ</h2>
+            </div>
+            <div class="col-lg-5">
+              <p class="text-secondary mb-0">ใช้ Bootstrap Carousel เพื่อสอน indicators, controls, captions และ image overlay ในงานเว็บที่ภาพเป็นพระเอก</p>
+            </div>
+          </div>
+
+          <div id="imageShowcaseCarousel" class="carousel slide rounded-4 overflow-hidden shadow-lg" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#imageShowcaseCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#imageShowcaseCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#imageShowcaseCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="2600">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=90" class="d-block w-100" style="height: 560px; object-fit: cover;" alt="Ocean campaign">
+                <div class="carousel-caption text-start">
+                  <span class="badge badge-pop mb-2">Campaign</span>
+                  <h3 class="display-6 fw-bold">Ocean launch story</h3>
+                  <p class="d-none d-md-block">ภาพกว้างช่วยสร้าง first impression สำหรับ campaign หรือ destination page</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2600">
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=90" class="d-block w-100" style="height: 560px; object-fit: cover;" alt="Workspace campaign">
+                <div class="carousel-caption">
+                  <span class="badge text-bg-info mb-2">Workspace</span>
+                  <h3 class="display-6 fw-bold">Modern creative studio</h3>
+                  <p class="d-none d-md-block">เหมาะกับเว็บบริษัท, studio, coworking หรือ brand portfolio</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2600">
+                <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1800&q=90" class="d-block w-100" style="height: 560px; object-fit: cover;" alt="Travel campaign">
+                <div class="carousel-caption text-end">
+                  <span class="badge text-bg-warning mb-2">Travel</span>
+                  <h3 class="display-6 fw-bold">Route to the horizon</h3>
+                  <p class="d-none d-md-block">ใช้ภาพแนวนอนและ caption เพื่อเล่าเรื่องแบบ editorial</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#imageShowcaseCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#imageShowcaseCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section-white py-5 border-top border-bottom">
+        <div class="container">
+          <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+            <div>
+              <p class="text-uppercase text-secondary small fw-bold mb-2">Gallery Grid</p>
+              <h2 class="display-6 fw-bold mb-0">Masonry-inspired layout ด้วย Bootstrap grid</h2>
+            </div>
+            <a class="btn btn-outline-secondary align-self-lg-end" href="#contact"><i class="bi bi-camera me-1" aria-hidden="true"></i>Book a shoot</a>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-lg-8">
+              <div class="gallery-tile rounded-4">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=88" alt="Beach">
+                <div class="gallery-caption">
+                  <span class="badge badge-pop mb-2">Wide feature</span>
+                  <h3 class="h4 mb-0">Full-width visual moment</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="gallery-tile rounded-4">
+                <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=88" alt="Landscape">
+                <div class="gallery-caption">
+                  <h3 class="h5 mb-0">Vertical story</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-tile rounded-4">
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=88" alt="Office">
+                <div class="gallery-caption"><h3 class="h5 mb-0">Workspace</h3></div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-tile rounded-4">
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=88" alt="Interior">
+                <div class="gallery-caption"><h3 class="h5 mb-0">Interior</h3></div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-tile rounded-4">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=88" alt="Nature">
+                <div class="gallery-caption"><h3 class="h5 mb-0">Landscape</h3></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="journal" class="section-pop py-5">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+              <img class="img-fluid rounded-4" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=88" alt="Creative discussion">
+            </div>
+            <div class="col-lg-6">
+              <p class="text-uppercase text-secondary small fw-bold mb-2">Journal</p>
+              <h2 class="display-6 fw-bold">ใช้ภาพคู่กับเนื้อหา เพื่อสร้างหน้า editorial ที่ดูมีน้ำหนัก</h2>
+              <p class="text-secondary">section นี้ใช้สอน `img-fluid`, responsive columns, spacing และ button hierarchy โดยไม่ต้องเขียน layout เองเยอะ</p>
+              <div class="list-group mb-4">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                  <span>Image ratio planning</span>
+                  <span class="badge badge-pop">Guide</span>
+                </div>
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                  <span>Card image crops</span>
+                  <span class="badge text-bg-info">Pattern</span>
+                </div>
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                  <span>Overlay captions</span>
+                  <span class="badge text-bg-warning">UI</span>
+                </div>
+              </div>
+              <a class="btn btn-accent" href="#contact"><i class="bi bi-rocket-takeoff me-1" aria-hidden="true"></i>Start project</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="clients" class="section-white py-5 border-top border-bottom">
+        <div class="container">
+          <div class="row align-items-end mb-4">
+            <div class="col-lg-7">
+              <p class="text-uppercase text-secondary small fw-bold mb-2">Our Clients</p>
+              <h2 class="display-6 fw-bold">ลูกค้าของเราที่ใช้ภาพเล่าเรื่องแบรนด์</h2>
+            </div>
+            <div class="col-lg-5">
+              <p class="text-secondary mb-0">section นี้ใช้สอน logo grid, responsive columns และ card ที่ใช้สีสดแต่ยังอ่านง่าย</p>
+            </div>
+          </div>
+
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+            <div class="col">
+              <div class="client-logo rounded-4 d-flex flex-column align-items-center justify-content-center gap-2 p-3">
+                <img class="rounded-circle" src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=160&q=85" alt="Aurora client">
+                <span>AURORA</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="client-logo rounded-4 d-flex flex-column align-items-center justify-content-center gap-2 p-3">
+                <img class="rounded-circle" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=160&q=85" alt="Nova client">
+                <span>NOVA</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="client-logo rounded-4 d-flex flex-column align-items-center justify-content-center gap-2 p-3">
+                <img class="rounded-circle" src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=160&q=85" alt="Vivid client">
+                <span>VIVID</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="client-logo rounded-4 d-flex flex-column align-items-center justify-content-center gap-2 p-3">
+                <img class="rounded-circle" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=160&q=85" alt="Atlas client">
+                <span>ATLAS</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="client-logo rounded-4 d-flex flex-column align-items-center justify-content-center gap-2 p-3">
+                <img class="rounded-circle" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=160&q=85" alt="Opal client">
+                <span>OPAL</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="client-logo rounded-4 d-flex flex-column align-items-center justify-content-center gap-2 p-3">
+                <img class="rounded-circle" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=160&q=85" alt="Lumen client">
+                <span>LUMEN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline" class="section-pop py-5">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <p class="text-uppercase text-secondary small fw-bold mb-2">Project Timeline</p>
+              <h2 class="display-6 fw-bold">Timeline งานภาพและเว็บไซต์ ตั้งแต่ moodboard ถึง launch</h2>
+              <p class="text-secondary mb-0">ใช้สอน custom CSS ร่วมกับ Bootstrap grid/card เพื่อทำ timeline ที่ responsive และดูโดดเด่น</p>
+            </div>
+            <div class="col-lg-7">
+              <div class="bg-white border rounded-4 p-4">
+                <div class="timeline-item pb-4">
+                  <span class="badge badge-pop mb-2">Week 1</span>
+                  <h3 class="h5">Discovery & Moodboard</h3>
+                  <p class="text-secondary mb-0">รวบรวม brand keywords, reference images, color direction และ layout mood</p>
+                </div>
+                <div class="timeline-item pb-4">
+                  <span class="badge text-bg-info mb-2">Week 2</span>
+                  <h3 class="h5">Visual System</h3>
+                  <p class="text-secondary mb-0">กำหนด hero image, card crops, gallery rhythm และ responsive image rules</p>
+                </div>
+                <div class="timeline-item pb-4">
+                  <span class="badge text-bg-warning mb-2">Week 3</span>
+                  <h3 class="h5">Bootstrap Build</h3>
+                  <p class="text-secondary mb-0">ประกอบ navbar, cards, gallery, testimonials, forms และ utility classes</p>
+                </div>
+                <div class="timeline-item">
+                  <span class="badge text-bg-success mb-2">Week 4</span>
+                  <h3 class="h5">Launch & Optimization</h3>
+                  <p class="text-secondary mb-0">ตรวจ mobile, image crop, accessibility labels, load performance และ final polish</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" class="section-white py-5 border-top border-bottom">
+        <div class="container">
+          <div class="text-center mb-4">
+            <p class="text-uppercase text-secondary small fw-bold mb-2">Testimonials</p>
+            <h2 class="display-6 fw-bold">เสียงจากลูกค้าที่ใช้เว็บ visual-first</h2>
+          </div>
+
+          <div class="row row-cols-1 row-cols-lg-3 g-3">
+            <div class="col">
+              <article class="photo-card testimonial-card rounded-4 h-100 p-3">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <img class="testimonial-avatar rounded-circle" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=85" alt="Client portrait">
+                  <div>
+                    <h3 class="h6 mb-0">Maya Chen</h3>
+                    <p class="text-secondary small mb-0">Creative Director, VIVID</p>
+                  </div>
+                </div>
+                <p class="mb-0">“ภาพ hero และ gallery ทำให้แคมเปญดูมีพลังขึ้นทันที ทีมเราแก้ content ต่อได้ง่ายเพราะโครงสร้าง Bootstrap ชัดมาก”</p>
+              </article>
+            </div>
+            <div class="col">
+              <article class="photo-card testimonial-card rounded-4 h-100 p-3">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <img class="testimonial-avatar rounded-circle" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=85" alt="Client portrait">
+                  <div>
+                    <h3 class="h6 mb-0">Daniel Park</h3>
+                    <p class="text-secondary small mb-0">Founder, ATLAS</p>
+                  </div>
+                </div>
+                <p class="mb-0">“จากหน้าเว็บที่เคยแบน กลายเป็นประสบการณ์ที่ลูกค้าหยุดดูรูปและเข้าใจบริการเร็วขึ้นมาก”</p>
+              </article>
+            </div>
+            <div class="col">
+              <article class="photo-card testimonial-card rounded-4 h-100 p-3">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <img class="testimonial-avatar rounded-circle" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=200&q=85" alt="Client portrait">
+                  <div>
+                    <h3 class="h6 mb-0">Anya Silva</h3>
+                    <p class="text-secondary small mb-0">Marketing Lead, LUMEN</p>
+                  </div>
+                </div>
+                <p class="mb-0">“ชอบที่สีสด ภาพเด่น แต่ยังมี layout ที่คุมง่ายบนมือถือ ไม่ต้องแก้ CSS เยอะหลังส่งงาน”</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-white py-5 border-top">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <h2 class="display-6 fw-bold">สร้างเว็บที่ภาพเด่นขึ้น</h2>
+              <p class="text-secondary">ใช้ form นี้สอน input, select, textarea และ responsive form grid ในเว็บ visual-first</p>
+            </div>
+            <div class="col-lg-7">
+              <form class="bg-white border rounded-4 p-4">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="name">Name</label>
+                    <input id="name" class="form-control form-control-lg" placeholder="Your name">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="email">Email</label>
+                    <input id="email" type="email" class="form-control form-control-lg" placeholder="you@example.com">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="project">Project type</label>
+                    <select id="project" class="form-select form-select-lg">
+                      <option>Portfolio website</option>
+                      <option>Travel campaign</option>
+                      <option>Hospitality landing page</option>
+                      <option>Brand story page</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="message">Message</label>
+                    <textarea id="message" class="form-control" rows="4" placeholder="Tell us about the visual direction"></textarea>
+                  </div>
+                </div>
+                <button class="btn btn-accent btn-lg mt-3" type="submit"><i class="bi bi-send me-2" aria-hidden="true"></i>Send request</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
+        <p class="mb-0">Image Studio Showcase</p>
+        <a class="link-light" href="index.html"><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Back to examples</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const themeToggle = document.getElementById('themeToggle');
+      themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+        document.documentElement.setAttribute('data-bs-theme', isDark ? 'light' : 'dark');
+        themeToggle.innerHTML = isDark
+          ? '<i class="bi bi-moon-stars me-1" aria-hidden="true"></i><span>Dark mode</span>'
+          : '<i class="bi bi-sun me-1" aria-hidden="true"></i><span>Light mode</span>';
+      });
+    </script>
+  </body>
+</html>

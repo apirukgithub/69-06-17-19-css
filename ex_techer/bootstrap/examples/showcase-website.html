@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clean Premium Bootstrap Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      :root {
+        --ink: #101828;
+        --muted: #667085;
+        --line: #e6e8ee;
+        --soft: #f7f8fb;
+        --brand: #155eef;
+        --brand-dark: #0b3b91;
+        --gold: #b9892f;
+      }
+
+      body {
+        font-family: "Noto Sans Thai", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: #fff;
+      }
+
+      .navbar {
+        backdrop-filter: blur(18px);
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      }
+
+      .hero {
+        background:
+          radial-gradient(circle at top right, rgba(21, 94, 239, .12), transparent 34rem),
+          linear-gradient(180deg, #fff, var(--soft));
+      }
+
+      .eyebrow {
+        color: var(--brand);
+        letter-spacing: .08em;
+      }
+
+      .premium-card {
+        border: 1px solid var(--line);
+        box-shadow: 0 18px 55px rgba(16, 24, 40, .08);
+      }
+
+      .subtle-card {
+        border: 1px solid var(--line);
+        box-shadow: 0 10px 28px rgba(16, 24, 40, .045);
+      }
+
+      .btn-premium {
+        --bs-btn-bg: var(--brand);
+        --bs-btn-border-color: var(--brand);
+        --bs-btn-hover-bg: var(--brand-dark);
+        --bs-btn-hover-border-color: var(--brand-dark);
+        --bs-btn-color: #fff;
+      }
+
+      .signal {
+        width: 10px;
+        height: 10px;
+        background: #12b76a;
+      }
+
+      .metric-divider {
+        border-right: 1px solid var(--line);
+      }
+
+      .feature-line {
+        width: 44px;
+        height: 3px;
+        background: var(--gold);
+      }
+
+      .dashboard-preview {
+        background: #0f172a;
+        color: #e5e7eb;
+      }
+
+      .bar {
+        width: 100%;
+        border-radius: 999px;
+        background: rgba(255,255,255,.16);
+        overflow: hidden;
+      }
+
+      .bar span {
+        display: block;
+        height: 8px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #93c5fd, #155eef);
+      }
+
+      @media (max-width: 767.98px) {
+        .metric-divider {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-white bg-opacity-75 border-bottom sticky-top">
+      <div class="container py-2">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
+          <span class="brand-mark rounded-3 d-inline-flex align-items-center justify-content-center text-white">B</span>
+          Bootstrap Atelier
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+          <a class="btn btn-premium ms-lg-3" href="#contact">Book a session</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero border-bottom">
+      <div class="container py-5 py-lg-6">
+        <div class="row align-items-center g-5 py-lg-5">
+          <div class="col-lg-7">
+            <p class="eyebrow text-uppercase small fw-bold mb-3">Clean Premium Bootstrap</p>
+            <h1 class="display-3 fw-bold mb-4">ออกแบบเว็บที่ดูมืออาชีพ โดยไม่ต้องตกแต่งเกินจำเป็น</h1>
+            <p class="lead text-secondary mb-4">ตัวอย่างนี้ใช้ Bootstrap 5.3 สร้างหน้าเว็บแนว premium consulting: สะอาด ชัด มีจังหวะ spacing ดี และยังแก้ต่อได้ง่ายในคลาสเรียน</p>
+            <div class="d-flex gap-2 flex-wrap mb-4">
+              <a class="btn btn-premium btn-lg" href="#services">Explore services</a>
+              <a class="btn btn-outline-secondary btn-lg" href="topics/index.html">View topic examples</a>
+            </div>
+            <div class="d-flex flex-column flex-md-row gap-3 text-secondary small">
+              <span class="d-flex align-items-center gap-2"><span class="signal rounded-circle"></span>Responsive by default</span>
+              <span class="d-flex align-items-center gap-2"><span class="signal rounded-circle"></span>Component-first design</span>
+              <span class="d-flex align-items-center gap-2"><span class="signal rounded-circle"></span>Low custom CSS</span>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="premium-card dashboard-preview rounded-4 p-4">
+              <div class="d-flex justify-content-between align-items-start mb-4">
+                <div>
+                  <p class="text-white-50 small mb-1">Project health</p>
+                  <h2 class="h4 text-white mb-0">Website System</h2>
+                </div>
+                <span class="badge text-bg-success">Live-ready</span>
+              </div>
+              <div class="row g-3 mb-4">
+                <div class="col-6">
+                  <div class="p-3 rounded-3" style="background: rgba(255,255,255,.08);">
+                    <p class="text-white-50 small mb-1">Sections</p>
+                    <strong class="fs-3">7</strong>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="p-3 rounded-3" style="background: rgba(255,255,255,.08);">
+                    <p class="text-white-50 small mb-1">Components</p>
+                    <strong class="fs-3">12</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="vstack gap-3">
+                <div>
+                  <div class="d-flex justify-content-between small mb-2"><span class="text-white-50">Layout</span><span>96%</span></div>
+                  <div class="bar"><span style="width: 96%"></span></div>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between small mb-2"><span class="text-white-50">Accessibility</span><span>88%</span></div>
+                  <div class="bar"><span style="width: 88%"></span></div>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between small mb-2"><span class="text-white-50">Customization</span><span>32%</span></div>
+                  <div class="bar"><span style="width: 32%"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="premium-card bg-white rounded-4 p-0 overflow-hidden">
+          <div class="row g-0 text-center">
+            <div class="col-md-4 metric-divider p-4">
+              <p class="text-secondary mb-1">Build time</p>
+              <strong class="fs-2">1 day</strong>
+            </div>
+            <div class="col-md-4 metric-divider p-4">
+              <p class="text-secondary mb-1">Bootstrap topics</p>
+              <strong class="fs-2">35+</strong>
+            </div>
+            <div class="col-md-4 p-4">
+              <p class="text-secondary mb-1">Custom CSS</p>
+              <strong class="fs-2">Minimal</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="services" class="py-5">
+        <div class="container">
+          <div class="row align-items-end mb-4">
+            <div class="col-lg-7">
+              <p class="eyebrow text-uppercase small fw-bold mb-2">Services</p>
+              <h2 class="display-6 fw-bold">หน้าเว็บที่ใช้สอน Bootstrap ได้ครบ แต่ยังดูเหมือนงานจริง</h2>
+            </div>
+            <div class="col-lg-5">
+              <p class="text-secondary mb-0">แต่ละส่วนออกแบบให้ชี้ concept ได้ชัด เช่น grid, card, spacing, button hierarchy, progress, accordion และ form</p>
+            </div>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <article class="subtle-card rounded-4 p-4 h-100">
+                <div class="feature-line rounded-pill mb-4"></div>
+                <h3 class="h4">Landing Structure</h3>
+                <p class="text-secondary mb-4">Hero, metrics, service cards และ call-to-action วางเป็นจังหวะอ่านง่าย</p>
+                <a class="link-primary fw-semibold text-decoration-none" href="#process">View process</a>
+              </article>
+            </div>
+            <div class="col">
+              <article class="subtle-card rounded-4 p-4 h-100">
+                <div class="feature-line rounded-pill mb-4"></div>
+                <h3 class="h4">Component System</h3>
+                <p class="text-secondary mb-4">ใช้ Bootstrap components ให้เหมือนระบบ UI จริง ไม่ใช่ตัวอย่างกระจัดกระจาย</p>
+                <a class="link-primary fw-semibold text-decoration-none" href="#pricing">Compare plans</a>
+              </article>
+            </div>
+            <div class="col">
+              <article class="subtle-card rounded-4 p-4 h-100">
+                <div class="feature-line rounded-pill mb-4"></div>
+                <h3 class="h4">Responsive Polish</h3>
+                <p class="text-secondary mb-4">คุม spacing, hierarchy และ mobile layout โดยไม่ต้องเขียน CSS เยอะ</p>
+                <a class="link-primary fw-semibold text-decoration-none" href="#contact">Start project</a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="py-5 bg-light border-top border-bottom">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <p class="eyebrow text-uppercase small fw-bold mb-2">Process</p>
+              <h2 class="display-6 fw-bold">ลำดับสอนที่ดูเป็นงานมืออาชีพ</h2>
+              <p class="text-secondary">ใช้ส่วนนี้สอน list group, grid, spacing และ content hierarchy ได้พร้อมกัน</p>
+            </div>
+            <div class="col-lg-7">
+              <div class="list-group premium-card rounded-4 overflow-hidden">
+                <div class="list-group-item p-4">
+                  <div class="d-flex gap-3">
+                    <span class="badge rounded-pill text-bg-primary align-self-start">01</span>
+                    <div><h3 class="h5">Define the sections</h3><p class="text-secondary mb-0">ระบุเป้าหมายของ hero, services, proof, pricing และ contact ก่อนเริ่มแต่งสี</p></div>
+                  </div>
+                </div>
+                <div class="list-group-item p-4">
+                  <div class="d-flex gap-3">
+                    <span class="badge rounded-pill text-bg-primary align-self-start">02</span>
+                    <div><h3 class="h5">Build with Bootstrap first</h3><p class="text-secondary mb-0">ใช้ container, row, col, cards, buttons และ utilities ให้เต็มที่ก่อนเพิ่ม CSS เอง</p></div>
+                  </div>
+                </div>
+                <div class="list-group-item p-4">
+                  <div class="d-flex gap-3">
+                    <span class="badge rounded-pill text-bg-primary align-self-start">03</span>
+                    <div><h3 class="h5">Polish the system</h3><p class="text-secondary mb-0">เพิ่ม brand color, card shadow, spacing rhythm และ responsive details เฉพาะจุด</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <p class="eyebrow text-uppercase small fw-bold mb-2">Pricing</p>
+            <h2 class="display-6 fw-bold">Premium pricing cards ที่ยังอ่านง่าย</h2>
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4">
+              <article class="subtle-card rounded-4 p-4 h-100">
+                <h3 class="h4">Foundation</h3>
+                <p class="text-secondary">สำหรับสอน Bootstrap basics</p>
+                <p class="display-5 fw-bold">$49</p>
+                <ul class="list-unstyled vstack gap-2 text-secondary mb-4">
+                  <li>Layout essentials</li>
+                  <li>Component patterns</li>
+                  <li>Responsive checklist</li>
+                </ul>
+                <button class="btn btn-outline-secondary w-100">Choose Foundation</button>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <article class="premium-card rounded-4 p-4 h-100 border-primary">
+                <span class="badge text-bg-primary mb-3">Recommended</span>
+                <h3 class="h4">Premium Workshop</h3>
+                <p class="text-secondary">สำหรับสอนทำเว็บครบหน้า</p>
+                <p class="display-5 fw-bold">$129</p>
+                <ul class="list-unstyled vstack gap-2 text-secondary mb-4">
+                  <li>Full landing page build</li>
+                  <li>Forms and plugin flow</li>
+                  <li>Design polish review</li>
+                </ul>
+                <button class="btn btn-premium w-100">Choose Workshop</button>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-5 bg-light border-top border-bottom">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-5">
+              <p class="eyebrow text-uppercase small fw-bold mb-2">FAQ</p>
+              <h2 class="display-6 fw-bold">ใช้สอน interaction ได้โดยไม่ทำหน้าเว็บรก</h2>
+            </div>
+            <div class="col-lg-7">
+              <div class="accordion premium-card rounded-4 overflow-hidden" id="faqAccordion">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">Clean Premium ต่างจาก Minimal ยังไง?</button>
+                  </h3>
+                  <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Minimal เน้นลดทุกอย่างให้เหลือน้อยที่สุด ส่วน Clean Premium ยังเรียบ แต่เพิ่มความรู้สึกคุณภาพด้วย spacing, shadow, contrast, typography และ hierarchy ที่แน่นกว่า</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">หน้านี้ใช้สอน Bootstrap อะไรได้บ้าง?</button>
+                  </h3>
+                  <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Navbar, grid, cards, badges, buttons, list group, pricing cards, accordion, form layout, progress bars และ responsive spacing</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="py-5">
+        <div class="container">
+          <div class="premium-card rounded-4 p-4 p-lg-5">
+            <div class="row g-4 align-items-start">
+              <div class="col-lg-5">
+                <p class="eyebrow text-uppercase small fw-bold mb-2">Contact</p>
+                <h2 class="display-6 fw-bold">เริ่มออกแบบเว็บที่ดูแพงขึ้น</h2>
+                <p class="text-secondary mb-0">Form นี้ใช้สอน grid form, input sizing, select, textarea และ button hierarchy ในบริบทเว็บจริง</p>
+              </div>
+              <div class="col-lg-7">
+                <form>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label" for="name">Name</label>
+                      <input id="name" class="form-control form-control-lg" placeholder="Your name">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="email">Email</label>
+                      <input id="email" type="email" class="form-control form-control-lg" placeholder="you@example.com">
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label" for="goal">Project goal</label>
+                      <select id="goal" class="form-select form-select-lg">
+                        <option>Premium landing page</option>
+                        <option>Admin dashboard</option>
+                        <option>Government agency website</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label" for="message">Message</label>
+                      <textarea id="message" class="form-control" rows="4" placeholder="Tell us what you want to build"></textarea>
+                    </div>
+                  </div>
+                  <button class="btn btn-premium btn-lg mt-3" type="submit">Send request</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-top py-4">
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
+        <p class="text-secondary mb-0">Bootstrap Atelier Clean Premium</p>
+        <a href="index.html">Back to examples</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>03.1 Branch List, Create and Delete</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body { min-height: 100vh; }
+      pre { white-space: pre-wrap; }
+      .terminal { background: #111827; color: #e5e7eb; border-radius: .5rem; padding: 1rem; }
+      .terminal .prompt { color: #93c5fd; }
+      .concept-card { border-left: 4px solid #0d6efd; }
+    </style>
+  </head>
+  <body class="bg-body-tertiary">
+    <main class="container py-5">
+      <div class="d-flex justify-content-between align-items-start gap-3 mb-4">
+        <div>
+          <p class="text-uppercase text-secondary small fw-semibold mb-1">Git Teaching Lab</p>
+          <h1 class="h3 fw-bold mb-1">03.1 Branch List, Create and Delete</h1>
+          <p class="text-secondary mb-0">เข้าใจ branch เป็น pointer และฝึกจัดการ branch พื้นฐาน</p>
+        </div>
+        <div class="d-flex gap-2 flex-wrap justify-content-end"><a class="btn btn-sm btn-outline-secondary" href="index.html">Back</a><a class="btn btn-sm btn-outline-secondary" href="02-05-inspection-command-matrix.html">Previous</a><a class="btn btn-sm btn-primary" href="03-02-switch-checkout-feature-lifecycle.html">Next</a></div>
+      </div>
+
+      <section class="bg-white border rounded-3 p-4 mb-4"><h2 class="h5">Branch commands</h2><pre class="terminal mb-0"><code><span class="prompt">$</span> git branch
+<span class="prompt">$</span> git branch feature/login
+<span class="prompt">$</span> git switch feature/login
+<span class="prompt">$</span> git branch -d feature/login
+<span class="prompt">$</span> git branch -D feature/login</code></pre></section><section class="alert alert-warning">ใช้ `-d` เมื่อต้องการลบแบบปลอดภัย และ `-D` เมื่อต้อง force delete</section>
+    </main>
+  </body>
+</html>

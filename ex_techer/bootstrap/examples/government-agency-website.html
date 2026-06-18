@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Government Agency Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      :root {
+        --gov-blue: #123c69;
+        --gov-gold: #c8952d;
+        --gov-ink: #172033;
+        --gov-soft: #f3f6fa;
+        --gov-line: #dbe3ee;
+      }
+
+      body {
+        font-family: "Noto Sans Thai", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--gov-ink);
+        background: #fff;
+      }
+
+      .top-strip {
+        background: var(--gov-blue);
+        color: #fff;
+      }
+
+      .brand-seal {
+        width: 48px;
+        height: 48px;
+        background: var(--gov-gold);
+        color: #fff;
+      }
+
+      .hero {
+        min-height: 72vh;
+        background:
+          linear-gradient(90deg, rgba(18, 60, 105, .9), rgba(18, 60, 105, .68), rgba(18, 60, 105, .2)),
+          url("https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&w=1800&q=85") center / cover;
+      }
+
+      .service-icon {
+        width: 48px;
+        height: 48px;
+        background: #e8f0fb;
+        color: var(--gov-blue);
+      }
+
+      .section-soft {
+        background: var(--gov-soft);
+      }
+
+      .news-date {
+        width: 72px;
+        border-left: 4px solid var(--gov-gold);
+      }
+
+      .btn-gov {
+        --bs-btn-bg: var(--gov-blue);
+        --bs-btn-border-color: var(--gov-blue);
+        --bs-btn-hover-bg: #0d2d50;
+        --bs-btn-hover-border-color: #0d2d50;
+        --bs-btn-color: #fff;
+      }
+
+      .border-gov {
+        border-color: var(--gov-line) !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-strip">
+      <div class="container py-2 d-flex flex-column flex-md-row justify-content-between gap-2 small">
+        <span>ศูนย์บริการประชาชน โทร. 1111</span>
+        <span>ขนาดตัวอักษร: ก ก ก | ภาษาไทย | English</span>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-3" href="#">
+          <span class="brand-seal rounded-circle d-inline-flex align-items-center justify-content-center fw-bold">TH</span>
+          <span>
+            <span class="d-block fw-bold">กรมบริการดิจิทัลประชาชน</span>
+            <span class="d-block small text-secondary">Digital Public Service Department</span>
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#agencyNav" aria-controls="agencyNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="agencyNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="#">หน้าแรก</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">บริการประชาชน</a></li>
+            <li class="nav-item"><a class="nav-link" href="#news">ข่าวสาร</a></li>
+            <li class="nav-item"><a class="nav-link" href="#downloads">เอกสาร</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">ติดต่อเรา</a></li>
+          </ul>
+          <a class="btn btn-gov ms-lg-3" href="#services">ยื่นคำร้องออนไลน์</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero d-flex align-items-center text-white">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-lg-8">
+            <span class="badge text-bg-warning mb-3">บริการภาครัฐออนไลน์</span>
+            <h1 class="display-4 fw-bold mb-4">ศูนย์กลางบริการประชาชน สะดวก โปร่งใส ตรวจสอบได้</h1>
+            <p class="lead text-white-50 mb-4">ตัวอย่างเว็บไซต์หน่วยงานรัฐที่รวมโครงสร้างข้อมูลสำคัญ บริการออนไลน์ ข่าวประกาศ ดาวน์โหลดเอกสาร และช่องทางติดต่อไว้ในหน้าเดียว</p>
+            <div class="d-flex gap-2 flex-wrap">
+              <a class="btn btn-warning btn-lg" href="#services">ค้นหาบริการ</a>
+              <a class="btn btn-outline-light btn-lg" href="#news">อ่านประกาศล่าสุด</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-soft border-bottom py-4">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="bg-white border border-gov rounded-3 p-4 h-100">
+                <p class="text-secondary mb-1">คำร้องออนไลน์ปีนี้</p>
+                <strong class="display-6">128,420</strong>
+              </div>
+            </div>
+            <div class="col">
+              <div class="bg-white border border-gov rounded-3 p-4 h-100">
+                <p class="text-secondary mb-1">ระยะเวลาดำเนินการเฉลี่ย</p>
+                <strong class="display-6">2.4 วัน</strong>
+              </div>
+            </div>
+            <div class="col">
+              <div class="bg-white border border-gov rounded-3 p-4 h-100">
+                <p class="text-secondary mb-1">ความพึงพอใจ</p>
+                <strong class="display-6">96%</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="py-5">
+        <div class="container">
+          <div class="row align-items-end mb-4">
+            <div class="col-lg-7">
+              <p class="text-uppercase text-secondary small fw-semibold mb-2">Public Services</p>
+              <h2 class="display-6 fw-bold">บริการยอดนิยม</h2>
+            </div>
+            <div class="col-lg-5">
+              <form class="input-group">
+                <input class="form-control" placeholder="ค้นหาบริการ เช่น ใบอนุญาต, ร้องเรียน, หนังสือรับรอง">
+                <button class="btn btn-gov" type="submit">ค้นหา</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+            <div class="col">
+              <a class="text-decoration-none text-body" href="#">
+                <div class="bg-white border border-gov rounded-3 p-4 h-100">
+                  <div class="service-icon rounded-3 d-flex align-items-center justify-content-center fw-bold mb-3">01</div>
+                  <h3 class="h5">ยื่นคำร้องออนไลน์</h3>
+                  <p class="text-secondary mb-0">ส่งคำร้องและแนบเอกสารผ่านระบบกลาง</p>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a class="text-decoration-none text-body" href="#">
+                <div class="bg-white border border-gov rounded-3 p-4 h-100">
+                  <div class="service-icon rounded-3 d-flex align-items-center justify-content-center fw-bold mb-3">02</div>
+                  <h3 class="h5">ติดตามสถานะ</h3>
+                  <p class="text-secondary mb-0">ตรวจสอบความคืบหน้าด้วยเลขคำร้อง</p>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a class="text-decoration-none text-body" href="#">
+                <div class="bg-white border border-gov rounded-3 p-4 h-100">
+                  <div class="service-icon rounded-3 d-flex align-items-center justify-content-center fw-bold mb-3">03</div>
+                  <h3 class="h5">ดาวน์โหลดแบบฟอร์ม</h3>
+                  <p class="text-secondary mb-0">รวมเอกสารและคู่มือประชาชน</p>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a class="text-decoration-none text-body" href="#">
+                <div class="bg-white border border-gov rounded-3 p-4 h-100">
+                  <div class="service-icon rounded-3 d-flex align-items-center justify-content-center fw-bold mb-3">04</div>
+                  <h3 class="h5">ร้องเรียน/เสนอแนะ</h3>
+                  <p class="text-secondary mb-0">แจ้งปัญหาการให้บริการและติดตามผล</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="news" class="section-soft py-5">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-7">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h3 fw-bold mb-0">ข่าวประกาศ</h2>
+                <a class="btn btn-outline-secondary btn-sm" href="#">ดูทั้งหมด</a>
+              </div>
+              <div class="vstack gap-3">
+                <article class="bg-white border border-gov rounded-3 p-3 d-flex gap-3">
+                  <div class="news-date bg-light p-2 text-center">
+                    <strong class="d-block">11</strong>
+                    <span class="small text-secondary">มิ.ย.</span>
+                  </div>
+                  <div>
+                    <span class="badge text-bg-primary mb-2">ประกาศ</span>
+                    <h3 class="h5">เปิดให้บริการยื่นคำร้องออนไลน์รูปแบบใหม่</h3>
+                    <p class="text-secondary mb-0">ประชาชนสามารถยื่นคำร้อง ติดตามสถานะ และรับเอกสารตอบกลับผ่านระบบกลาง</p>
+                  </div>
+                </article>
+                <article class="bg-white border border-gov rounded-3 p-3 d-flex gap-3">
+                  <div class="news-date bg-light p-2 text-center">
+                    <strong class="d-block">08</strong>
+                    <span class="small text-secondary">มิ.ย.</span>
+                  </div>
+                  <div>
+                    <span class="badge text-bg-warning mb-2">จัดซื้อจัดจ้าง</span>
+                    <h3 class="h5">ประกาศแผนจัดซื้อจัดจ้างประจำไตรมาส</h3>
+                    <p class="text-secondary mb-0">เผยแพร่ข้อมูลเพื่อความโปร่งใสและเปิดโอกาสให้ประชาชนตรวจสอบ</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="bg-white border border-gov rounded-3 p-4 h-100">
+                <h2 class="h4 fw-bold mb-3">สถานะบริการ</h2>
+                <div class="vstack gap-3">
+                  <div>
+                    <div class="d-flex justify-content-between mb-1"><span>คำร้องทั่วไป</span><strong>84%</strong></div>
+                    <div class="progress" role="progressbar" aria-label="General request progress" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:84%"></div></div>
+                  </div>
+                  <div>
+                    <div class="d-flex justify-content-between mb-1"><span>ใบอนุญาต</span><strong>62%</strong></div>
+                    <div class="progress" role="progressbar" aria-label="License progress" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-warning" style="width:62%"></div></div>
+                  </div>
+                  <div>
+                    <div class="d-flex justify-content-between mb-1"><span>ข้อร้องเรียน</span><strong>91%</strong></div>
+                    <div class="progress" role="progressbar" aria-label="Complaint progress" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-success" style="width:91%"></div></div>
+                  </div>
+                </div>
+                <hr>
+                <p class="text-secondary mb-0">ข้อมูลตัวอย่างสำหรับสอน progress, cards และ dashboard section ในเว็บหน่วยงานรัฐ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="downloads" class="py-5">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <h2 class="display-6 fw-bold">เอกสารและแบบฟอร์ม</h2>
+              <p class="text-secondary">ตัวอย่างการแสดงรายการเอกสารในรูปแบบ table ที่ responsive และอ่านง่าย</p>
+            </div>
+            <div class="col-lg-7">
+              <div class="table-responsive border border-gov rounded-3">
+                <table class="table table-hover align-middle mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th>ชื่อเอกสาร</th>
+                      <th>ประเภท</th>
+                      <th>อัปเดต</th>
+                      <th class="text-end">ดาวน์โหลด</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>คู่มือการยื่นคำร้องออนไลน์</td>
+                      <td><span class="badge text-bg-info">คู่มือ</span></td>
+                      <td>11 มิ.ย. 2569</td>
+                      <td class="text-end"><button class="btn btn-sm btn-outline-primary">PDF</button></td>
+                    </tr>
+                    <tr>
+                      <td>แบบฟอร์มขอหนังสือรับรอง</td>
+                      <td><span class="badge text-bg-secondary">แบบฟอร์ม</span></td>
+                      <td>05 มิ.ย. 2569</td>
+                      <td class="text-end"><button class="btn btn-sm btn-outline-primary">PDF</button></td>
+                    </tr>
+                    <tr>
+                      <td>ประกาศมาตรฐานการให้บริการ</td>
+                      <td><span class="badge text-bg-success">ประกาศ</span></td>
+                      <td>01 มิ.ย. 2569</td>
+                      <td class="text-end"><button class="btn btn-sm btn-outline-primary">PDF</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-soft py-5">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <h2 class="h3 fw-bold">ติดต่อหน่วยงาน</h2>
+              <p class="text-secondary">กรมบริการดิจิทัลประชาชน อาคารศูนย์ราชการ ถนนแจ้งวัฒนะ กรุงเทพมหานคร</p>
+              <div class="vstack gap-2">
+                <span>โทร. 1111</span>
+                <span>อีเมล contact@example.go.th</span>
+                <span>เวลาทำการ จันทร์-ศุกร์ 08:30-16:30</span>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <form class="bg-white border border-gov rounded-3 p-4">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="name">ชื่อ-นามสกุล</label>
+                    <input id="name" class="form-control">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="email">อีเมล</label>
+                    <input id="email" type="email" class="form-control">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="topic">หัวข้อ</label>
+                    <select id="topic" class="form-select">
+                      <option>สอบถามบริการ</option>
+                      <option>ร้องเรียน</option>
+                      <option>เสนอแนะ</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="message">ข้อความ</label>
+                    <textarea id="message" class="form-control" rows="4"></textarea>
+                  </div>
+                </div>
+                <button class="btn btn-gov mt-3" type="submit">ส่งข้อความ</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="top-strip py-4">
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
+        <span>กรมบริการดิจิทัลประชาชน</span>
+        <a class="link-light" href="index.html">กลับหน้า examples</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>04.4 Team Collaboration Loop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body { min-height: 100vh; }
+      pre { white-space: pre-wrap; }
+      .terminal { background: #111827; color: #e5e7eb; border-radius: .5rem; padding: 1rem; }
+      .terminal .prompt { color: #93c5fd; }
+      .concept-card { border-left: 4px solid #0d6efd; }
+    </style>
+  </head>
+  <body class="bg-body-tertiary">
+    <main class="container py-5">
+      <div class="d-flex justify-content-between align-items-start gap-3 mb-4">
+        <div>
+          <p class="text-uppercase text-secondary small fw-semibold mb-1">Git Teaching Lab</p>
+          <h1 class="h3 fw-bold mb-1">04.4 Team Collaboration Loop</h1>
+          <p class="text-secondary mb-0">ลำดับการทำงานร่วมกันในทีมแบบปลอดภัย</p>
+        </div>
+        <div class="d-flex gap-2 flex-wrap justify-content-end"><a class="btn btn-sm btn-outline-secondary" href="index.html">Back</a><a class="btn btn-sm btn-outline-secondary" href="04-03-push-origin-main.html">Previous</a><button class="btn btn-sm btn-primary" disabled>Next</button></div>
+      </div>
+
+      <section class="bg-white border rounded-3 p-4"><h2 class="h5">Daily loop</h2><ol><li>รับงานใหม่: `git pull` หรือ `git fetch` แล้วตรวจ</li><li>สร้าง branch: `git switch -c feature/name`</li><li>commit งานเล็ก ๆ: `git add` + `git commit`</li><li>อัปเดตก่อนส่ง: `git fetch`/`git pull`</li><li>ส่งงาน: `git push -u origin feature/name`</li></ol><pre class="terminal mb-0"><code><span class="prompt">$</span> git pull origin main
+<span class="prompt">$</span> git switch -c feature/profile-card
+# edit, add, commit
+<span class="prompt">$</span> git push -u origin feature/profile-card</code></pre></section>
+    </main>
+  </body>
+</html>
